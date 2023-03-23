@@ -5,7 +5,7 @@ display_name: data-register
 
 jobs:
   register_data:
-    code: data-register
+    code: script_folder
     command: python data-register.py --data_path ${{inputs.data_path}}
     inputs:
       data_path:
