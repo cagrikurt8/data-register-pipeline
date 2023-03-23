@@ -1,0 +1,11 @@
+name: Trigger a Data Register Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  train:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Submit a Machine Learning Job
+      run: az ml job create --file ./register-data/data-register-job-pipeline.yml --resource-group AI-ML_RG --workspace-name aml-workspace --stream -s

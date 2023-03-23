@@ -1,0 +1,15 @@
+$schema: https://azuremlschemas.azureedge.net/latest/pipelineJob.schema.json
+type: pipeline
+experiment_name: Data Register Pipeline
+display_name: data-register
+
+jobs:
+  register_data:
+    code: register-data
+    command: python data-register.py --data_path ${{inputs.data_path}}
+    inputs:
+      data_path:
+        type: uri_file
+        path: azureml://datastores/analyticsblob/paths/salesdata.csv
+    environment: azureml:sklearn-1.1@latest
+    compute: azureml:ml-comp
