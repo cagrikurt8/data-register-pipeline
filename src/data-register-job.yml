@@ -8,4 +8,4 @@ jobs:
     code: script_folder
     command: python data-register.py --data_path
     environment: azureml:train-env@latest
-    compute: azureml:ml-comp
+    compute: azureml:ml-cluster
